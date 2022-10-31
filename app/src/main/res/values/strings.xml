@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">VogueUI</string>
+
+    <string name="latest_shows">LATEST</string>
+    <string name="search">SEARCH</string>
+    <string name="featured_shows">FEATURED</string>
+    <string name="profile">PROFILE</string>
+</resources>
