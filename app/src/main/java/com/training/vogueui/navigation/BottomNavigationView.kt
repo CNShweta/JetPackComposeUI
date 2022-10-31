@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.Icon
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -86,7 +87,8 @@ fun BottomMenuItem(
         Text(
             text = stringResource(item.title),
             color = if(isSelected) activeTextColor else inactiveTextColor,
-            modifier = Modifier.padding(top = 10.dp)
+            modifier = Modifier.padding(top = 10.dp),
+            style = MaterialTheme.typography.body1
         )
         Box(
             contentAlignment = Alignment.Center,

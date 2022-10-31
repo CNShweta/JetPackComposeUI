@@ -9,12 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavController
+import com.training.vogueui.ui.theme.RunwayWhite
 
 @Composable
 fun Profile(navController: NavController, modifier: Modifier){
     Box(modifier = modifier
         .fillMaxSize()
-        .background(Color.Cyan), contentAlignment = Alignment.Center){
+        .background(RunwayWhite), contentAlignment = Alignment.Center){
         Text(text = "Profile")
     }
 }
