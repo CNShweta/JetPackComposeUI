@@ -2,7 +2,6 @@ package com.training.vogueui.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -27,7 +26,7 @@ import com.training.vogueui.ui.theme.label2
 import com.training.vogueui.ui.theme.subtitle
 
 @Composable
-fun ImageComponent() {
+fun ImageComponent(showFashionShowDetails: Boolean = false) {
     ConstraintLayout {
         val (placeholderImage, fashionShowDetail) = createRefs()
 
@@ -43,29 +42,31 @@ fun ImageComponent() {
                 }
         )
 
-        Box(
-            Modifier
-                .background(
-                    brush = Brush.verticalGradient(
-                        colors = listOf(
-                            Transparent,
-                            Black
+        if (showFashionShowDetails) {
+            Box(
+                Modifier
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Transparent,
+                                Black
+                            )
                         )
                     )
-                )
-                .fillMaxHeight(0.3F)
-                .fillMaxWidth()
-                .padding(8.dp)
-                .constrainAs(fashionShowDetail) {
-                    bottom.linkTo(placeholderImage.bottom)
-                    absoluteLeft.linkTo(placeholderImage.absoluteLeft)
-                }) {
-            Column(
-                modifier = Modifier.padding(bottom = 4.dp)
-            ) {
-                Text(text = "Givenchy".uppercase(), style = MaterialTheme.typography.label2)
-                Spacer(Modifier.height(4.dp))
-                Text(text = "Resort 2023".uppercase(), style = MaterialTheme.typography.subtitle)
+                    .fillMaxHeight(0.3F)
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .constrainAs(fashionShowDetail) {
+                        bottom.linkTo(placeholderImage.bottom)
+                        absoluteLeft.linkTo(placeholderImage.absoluteLeft)
+                    }) {
+                Column(
+                    modifier = Modifier.padding(bottom = 4.dp)
+                ) {
+                    Text(text = "Givenchy".uppercase(), style = MaterialTheme.typography.label2)
+                    Spacer(Modifier.height(4.dp))
+                    Text(text = "Resort 2023".uppercase(), style = MaterialTheme.typography.subtitle)
+                }
             }
         }
     }
@@ -75,6 +76,6 @@ fun ImageComponent() {
 @Composable
 fun ImageComponentPreview() {
     VogueUITheme {
-        ImageComponent()
+        ImageComponent(true)
     }
 }
