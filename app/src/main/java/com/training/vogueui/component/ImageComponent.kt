@@ -16,31 +16,34 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Transparent
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
-import com.training.vogueui.R
 import com.training.vogueui.ui.theme.VogueUITheme
 import com.training.vogueui.ui.theme.label2
 import com.training.vogueui.ui.theme.subtitle
+import com.training.vogueui.util.loadImageUsingGlide
 
 @Composable
 fun ImageComponent(showFashionShowDetails: Boolean = false) {
     ConstraintLayout {
         val (placeholderImage, fashionShowDetail) = createRefs()
+        val image = loadImageUsingGlide(imageUrl = "https://assets.vogue.com/photos/629e0a01363baa7e460ac736/master/w_2240,c_limit/00001-givenchy-resort-2023-credit-brand.jpg").value
 
-        Image(
-            painter = painterResource(id = R.drawable.givenchy_brand),
-            contentDescription = "placeholder",
-            modifier = Modifier
-                .fillMaxWidth()
-                .constrainAs(placeholderImage) {
-                    top.linkTo(parent.top)
-                    bottom.linkTo(parent.bottom)
-                    absoluteLeft.linkTo(parent.absoluteLeft)
-                }
-        )
+        image?.let {
+            Image(
+                bitmap = it.asImageBitmap(),
+                contentDescription = "placeholder",
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .constrainAs(placeholderImage) {
+                        top.linkTo(parent.top)
+                        bottom.linkTo(parent.bottom)
+                        absoluteLeft.linkTo(parent.absoluteLeft)
+                    }
+            )
+        }
 
         if (showFashionShowDetails) {
             Box(
