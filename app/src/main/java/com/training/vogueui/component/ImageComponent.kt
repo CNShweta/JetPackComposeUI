@@ -23,6 +23,8 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.training.vogueui.R
 import com.training.vogueui.ui.theme.VogueUITheme
+import com.training.vogueui.ui.theme.label2
+import com.training.vogueui.ui.theme.subtitle
 
 @Composable
 fun ImageComponent() {
@@ -59,12 +61,11 @@ fun ImageComponent() {
                     absoluteLeft.linkTo(placeholderImage.absoluteLeft)
                 }) {
             Column(
-                modifier = Modifier.padding(bottom = 4.dp),
-                verticalArrangement = Arrangement.Bottom
+                modifier = Modifier.padding(bottom = 4.dp)
             ) {
-                Text(text = "Givenchy".uppercase(), style = MaterialTheme.typography.h6)
+                Text(text = "Givenchy".uppercase(), style = MaterialTheme.typography.label2)
                 Spacer(Modifier.height(4.dp))
-                Text(text = "Resort 2023".uppercase(), style = MaterialTheme.typography.body1)
+                Text(text = "Resort 2023".uppercase(), style = MaterialTheme.typography.subtitle)
             }
         }
     }
