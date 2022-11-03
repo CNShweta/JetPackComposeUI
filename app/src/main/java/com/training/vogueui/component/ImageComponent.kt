@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color.Companion.Black
@@ -25,11 +26,24 @@ import com.training.vogueui.ui.theme.label2
 import com.training.vogueui.ui.theme.subtitle
 import com.training.vogueui.util.loadImageUsingGlide
 
+/**
+ * ImageComponent is the Composable for all image instances
+ *
+ * @property imageUrl url of the image to be loaded into Image Composable
+ * @property brandName brand name of fashion show
+ * @property seasonName season name of fashion show
+ * @property showFashionShowDetails boolean to indicate visibility of fashion show details
+ */
 @Composable
-fun ImageComponent(showFashionShowDetails: Boolean = false) {
+fun ImageComponent(
+    imageUrl: String,
+    brandName: String? = null,
+    seasonName: String? = null,
+    showFashionShowDetails: Boolean = false
+) {
     ConstraintLayout {
         val (placeholderImage, fashionShowDetail) = createRefs()
-        val image = loadImageUsingGlide(imageUrl = "https://assets.vogue.com/photos/629e0a01363baa7e460ac736/master/w_2240,c_limit/00001-givenchy-resort-2023-credit-brand.jpg").value
+        val image = loadImageUsingGlide(imageUrl = imageUrl).value
 
         image?.let {
             Image(
@@ -62,13 +76,25 @@ fun ImageComponent(showFashionShowDetails: Boolean = false) {
                     .constrainAs(fashionShowDetail) {
                         bottom.linkTo(placeholderImage.bottom)
                         absoluteLeft.linkTo(placeholderImage.absoluteLeft)
-                    }) {
+                    },
+                contentAlignment = Alignment.BottomStart
+            ) {
                 Column(
                     modifier = Modifier.padding(bottom = 4.dp)
                 ) {
-                    Text(text = "Givenchy".uppercase(), style = MaterialTheme.typography.label2)
+                    brandName?.let {
+                        Text(
+                            text = it.uppercase(),
+                            style = MaterialTheme.typography.label2
+                        )
+                    }
                     Spacer(Modifier.height(4.dp))
-                    Text(text = "Resort 2023".uppercase(), style = MaterialTheme.typography.subtitle)
+                    seasonName?.let {
+                        Text(
+                            text = it.uppercase(),
+                            style = MaterialTheme.typography.subtitle
+                        )
+                    }
                 }
             }
         }
@@ -79,6 +105,11 @@ fun ImageComponent(showFashionShowDetails: Boolean = false) {
 @Composable
 fun ImageComponentPreview() {
     VogueUITheme {
-        ImageComponent(true)
+        ImageComponent(
+            "https://assets.vogue.com/photos/629e0a01363baa7e460ac736/master/w_2240,c_limit/00001-givenchy-resort-2023-credit-brand.jpg",
+            "Givenchy",
+            "Resort 2023",
+            true
+        )
     }
 }

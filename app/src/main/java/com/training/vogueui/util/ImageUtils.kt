@@ -11,6 +11,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 
+/**
+ * ImageComponent is the Composable for all image instances
+ *
+ * @param imageUrl url of the image to be loaded
+ * @return bitmapState value from given imageUrl
+ */
 @SuppressLint("UnrememberedMutableState")
 @Composable
 fun loadImageUsingGlide(imageUrl: String): MutableState<Bitmap?> {
@@ -20,7 +26,6 @@ fun loadImageUsingGlide(imageUrl: String): MutableState<Bitmap?> {
     Glide.with(LocalContext.current)
         .asBitmap()
         .load(imageUrl)
-        .placeholder(getShimmerDrawable())
         .into(object : CustomTarget<Bitmap>() {
             override fun onLoadCleared(placeholder: Drawable?) { }
             override fun onResourceReady(

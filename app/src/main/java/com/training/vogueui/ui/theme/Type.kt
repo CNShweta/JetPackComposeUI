@@ -26,7 +26,7 @@ val Typography.label2: TextStyle
         return  TextStyle(
             color = Color.White,
             fontFamily = gothicA1,
-            fontWeight = FontWeight.Medium,
+            fontWeight = FontWeight(550),
             fontSize = 11.sp
         )
     }
