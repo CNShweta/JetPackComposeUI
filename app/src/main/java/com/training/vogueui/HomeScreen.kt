@@ -7,6 +7,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.training.vogueui.navigation.AppToolBar
 import com.training.vogueui.navigation.BottomNavigationView
 import com.training.vogueui.navigation.Navigation
 
@@ -17,7 +18,10 @@ fun HomeScreen(){
         color = MaterialTheme.colors.background
     ) {
         val navController = rememberNavController()
-        Scaffold(bottomBar = { BottomNavigationView(navController) }) {
+        Scaffold(
+            bottomBar = { BottomNavigationView(navController) },
+            topBar = { AppToolBar() }
+        ) {
             Navigation(Modifier,navController)
         }
     }
