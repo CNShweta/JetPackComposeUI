@@ -50,7 +50,7 @@ fun LatestShowsComponent(
             Column(
                 modifier = Modifier.padding(bottom = 4.dp)
             ) {
-                TitleComponent(title = brandName)
+                Label2Component(title = brandName)
                 Spacer(Modifier.height(4.dp))
                 SubtitleComponent(subtitle = seasonName)
             }

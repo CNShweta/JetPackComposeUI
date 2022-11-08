@@ -9,7 +9,7 @@ import com.training.vogueui.ui.theme.VogueUITheme
 import com.training.vogueui.ui.theme.label2
 
 @Composable
-fun TitleComponent(
+fun Label2Component(
     modifier: Modifier = Modifier,
     title: String
 ) {
@@ -21,8 +21,8 @@ fun TitleComponent(
 
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
-fun BrandNameComponentPreview() {
+fun Label2ComponentPreview() {
     VogueUITheme {
-        TitleComponent(title = "Givenchy")
+        Label2Component(title = "Givenchy")
     }
 }
