@@ -20,6 +20,19 @@ val gothicA1 = FontFamily(
     )
 )
 
+val Typography.title1: TextStyle
+@Composable
+get() {
+    return TextStyle(
+        color = Color.White,
+        fontFamily = gothicA1,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.8.sp
+    )
+}
+
 val Typography.label2: TextStyle
     @Composable
     get() {
@@ -27,7 +40,9 @@ val Typography.label2: TextStyle
             color = Color.White,
             fontFamily = gothicA1,
             fontWeight = FontWeight(550),
-            fontSize = 11.sp
+            fontSize = 11.sp,
+            lineHeight = 12.sp,
+            letterSpacing = 1.8.sp
         )
     }
 
@@ -38,7 +53,9 @@ val Typography.subtitle: TextStyle
             color = Color.White,
             fontFamily = gothicA1,
             fontWeight = FontWeight.Normal,
-            fontSize = 9.sp
+            fontSize = 9.sp,
+            lineHeight = 12.sp,
+            letterSpacing = 1.2.sp
         )
     }
 
