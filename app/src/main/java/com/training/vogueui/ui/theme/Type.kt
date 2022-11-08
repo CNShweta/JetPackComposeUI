@@ -1,6 +1,8 @@
 package com.training.vogueui.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -17,6 +19,28 @@ val gothicA1 = FontFamily(
         Font(R.font.gothica1_black, FontWeight.Black),
     )
 )
+
+val Typography.label2: TextStyle
+    @Composable
+    get() {
+        return  TextStyle(
+            color = Color.White,
+            fontFamily = gothicA1,
+            fontWeight = FontWeight(550),
+            fontSize = 11.sp
+        )
+    }
+
+val Typography.subtitle: TextStyle
+    @Composable
+    get() {
+        return  TextStyle(
+            color = Color.White,
+            fontFamily = gothicA1,
+            fontWeight = FontWeight.Normal,
+            fontSize = 9.sp
+        )
+    }
 
 // Set of Material typography styles to start with
 val Typography = Typography(
