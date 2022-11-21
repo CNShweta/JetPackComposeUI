@@ -1,6 +1,7 @@
 package com.training.vogueui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -19,6 +20,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             VogueUITheme {
                 HomeScreen()
+                ComposableLifecycle { _, event ->
+                    Log.d("lifecycle", event.toString())
+                }
             }
         }
     }

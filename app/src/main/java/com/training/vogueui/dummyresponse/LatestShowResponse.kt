@@ -5,20 +5,24 @@ import com.training.vogueui.model.FashionShow
 fun getLatestShows(): ArrayList<FashionShow> {
     return arrayListOf(
         FashionShow(
-            "Supriya Lele",
-            "https://assets.vogue.com/photos/63638da0bed27995a83705c5/master/w_2240,c_limit/00001-supriya-lele-2023-ready-to-wear-credit-brand.jpg"
+            "https://assets.vogue.com/photos/6374b66680a2e070d3ba3180/master/pass/00001-cult-gaia-resort-2023-credit-brand.jpg",
+            "Cult Gaia",
+            "Resort 2023"
         ),
         FashionShow(
-            "Todo Snyder",
-            "https://assets.vogue.com/photos/6362554cb7ffc694db8867d6/master/w_2240,c_limit/00001-todd-snyder-spring-2023-menswear-credit-brand.jpg"
+            "https://assets.vogue.com/photos/6374edbfbef03ca674096261/master/pass/00001-berluti-spring-2023-menswear-credit-brand.jpg",
+            "Berluti",
+            "Spring 2023 Menswear"
         ),
         FashionShow(
-            "Tia Adeola",
-            "https://assets.vogue.com/photos/6361028525161163f5e44832/master/w_2240,c_limit/00002-tia-adeola-resort-2023-credit-brand.jpg"
+            "https://assets.vogue.com/photos/63736cab39d0839de993233d/master/pass/00001-emilio-pucci-resort-2023-credit-brand.jpg",
+            "Emilio Pucci",
+            "Resort 2023"
         ),
         FashionShow(
-            "Bottega Vebeta",
-            "https://assets.vogue.com/photos/635fca2537a9bde5c0cd3433/master/w_2240,c_limit/00001-bottega-veneta-resort-2023-credit-brand.jpg"
-        ),
+            "https://assets.vogue.com/photos/63724b9ce7812feb894e5d3f/master/pass/00001-the-attico-resort-2023-credit-vito-fernicola.jpg",
+            "The Attico",
+            "Resort 2023"
+        )
     )
 }
